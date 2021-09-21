@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import BasicTable from './BasicTable';
 import './Display.scss';
 import  { removeTypeName } from '../utilities';
+import CreateForm from './CreateForm';
 
 const restaurantsQuery = gql`
   {
@@ -38,6 +39,8 @@ const Display = (props) => {
       <BasicTable data={removeTypeName(data.restaurants)} />
       <h2>Global Data Handling</h2>
       <BasicTable  data={props.storeData} />
+      <h2>Add Restaurant</h2>
+      <CreateForm></CreateForm>
     </div>
   );
 }
